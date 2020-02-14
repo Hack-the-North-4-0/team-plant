@@ -2,85 +2,255 @@
 
 {%- block content %}
 
-    <div class="govuk-width-container">
-      <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-              <h1 class="govuk-heading-l">
-                  Care Leavers Advice
-                </h1>
-            <div class="govuk-panel govuk-panel--confirmation">
-              <h1 class="govuk-panel__title">
-                Results
-              </h1>
-            </div>
-
-            <div class="panel-content ">
-            {% if results['photo-id'] === 'no' %}
-              <div class="panel-results panel-border-coral">
-                <h3 class="govuk-heading-m">Getting a photo identification</h2>
-
-              </div>
-            {% endif %}
-
-            {% if results['bank-account'] === 'no' %}
-            <div class="panel-results panel-border-blue">
-              <h3 class="govuk-heading-m">Getting a bank account</h2>
-
-            </div>
-            {% endif %}
-
-            {% if results['nino'] === 'no' %}
-            <div class="panel-results panel-border-green">
-              <h3 class="govuk-heading-m">Getting a National Insurance Number</h2>
-
-            </div>
-
-            {% endif %}
-
-            {% if results['benefits'] === 'yes' %}
-            <div class="panel-results panel-border-gold">
-            <h3 class="govuk-heading-m">Getting access to benefits</h2>
-
-            </div>
-
-            {% endif %}
-
-            {% if results['housing'] === 'yes' %}
-            <div class="panel-results panel-border-magenta">
-              <h3 class="govuk-heading-m">Finding somewhere to live</h2>
-
-            </div>
-            {% endif %}
-
-            {% if results['support'] === 'no' %}
-            <div class="panel-results panel-border-brown">
-              <h3 class="govuk-heading-m">Finding help and support</h2>
-
-            </div>
-            {% endif %}
-
-            {% if results['employment'] === 'no' %}
-            <div class="panel-results panel-border-brick">
-              <h3 class="govuk-heading-m">Looking for a job</h2>
-
-              </div>
-            {% endif %}
-
-            {% if results['education'] === 'yes' %}
-            <div class="panel-results panel-border-turquoise">
-              <h3 class="govuk-heading-m">Education</h2>
-
-            </div>
-            {% endif %}
-
-            </div>
-          </div>
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Advice for care leavers</span>
+        <h1 class="govuk-heading-l">
+          Universal Care
+        </h1>
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Results
+          </h1>
         </div>
-      </main>
-    </div>
 
-    {{ govukButton({
+        <div class="panel-content ">
+          {% if results['photo-id'] === 'no' %}
+          <div class="panel-results panel-border-coral">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m">Getting a photo identification</h3>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                {% include "./includes/done-checkbox.html" %}
+              </div>
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Show me how
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>
+                  If you have already made a claim to benefits, speak to your work coach at the local
+                  jobcentre who may be able to help you obtain photo identification.
+                </p>
+                <p>
+                  If you need to make a claim to benefit, you can get help in making
+                  a claim to Universal Credit from your local jobcentre or by applying online <a href="">here</a>.
+                </p>
+              </div>
+            </details>
+          </div>
+          {% endif %}
+
+          {% if results['bank-account'] === 'no' %}
+          <div class="panel-results panel-border-blue">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m">Getting a bank account</h3>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                {% include "./includes/done-checkbox.html" %}
+              </div>
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Show me how
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>
+                  Do you know what bank accounts are available? You can open a basic bank account with most national
+                  banks.
+                  For more information on how to do this click <a href="">here</a>.
+                </p>
+
+              </div>
+            </details>
+          </div>
+          {% endif %}
+
+          {% if results['nino'] === 'no' %}
+          <div class="panel-results panel-border-green">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m">Getting a National Insurance Number</h3>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                {% include "./includes/done-checkbox.html" %}
+              </div>
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Show me how
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>
+                  If you have lost your National Insurance Number, you can telephone
+                  0300 200 3500 for help in obtaining this. You can also apply <a href="">online</a>.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          {% endif %}
+
+          {% if results['benefits'] === 'yes' %}
+          <div class="panel-results panel-border-gold">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m">Getting access to benefits</h3>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                {% include "./includes/done-checkbox.html" %}
+              </div>
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Show me how
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>
+                  If you need to make a claim to benefit, you can get help in making a claim to Universal Credit
+                  from your local jobcentre or by applying online <a href="">online</a>.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          {% endif %}
+
+          {% if results['housing'] === 'yes' %}
+          <div class="panel-results panel-border-magenta">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m">Finding somewhere to live</h3>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                {% include "./includes/done-checkbox.html" %}
+              </div>
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Show me how
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>
+                  Did you know that you may be eligible for a home allowance. Some care leavers
+                  who are moving into independent accommodation can apply for a grant of up to £2,000.
+                  This is to pay for the things you need to set up your own home like a cooker, plates or furniture.
+                  You have to apply for this through your social worker or personal adviser.
+                </p>
+                <p>
+                  Help in finding somewhere to live is available through Shelter or Barnardos or via your local council
+                  housing options team.
+                </p>
+                <p>
+                  Alternatively speak to your work coach at the Jobcentre
+                </p>
+
+              </div>
+            </details>
+          </div>
+          {% endif %}
+
+          {% if results['support'] === 'no' %}
+          <div class="panel-results panel-border-brown">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m">Finding help and support</h3>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                {% include "./includes/done-checkbox.html" %}
+              </div>
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Show me how
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>
+                  Ongoing help is still available through the Transitions Team at your local council until the age of 25
+                  (if continuing in full time education). This can include help in finding somewhere to live, move into
+                  adulthood and start your journey to become fully independent
+                </p>
+              </div>
+            </details>
+          </div>
+          {% endif %}
+
+          {% if results['employment'] === 'no' %}
+          <div class="panel-results panel-border-brick">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m">Looking for a job</h3>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                {% include "./includes/done-checkbox.html" %}
+              </div>
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Show me how
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur
+              </div>
+            </details>
+          </div>
+          {% endif %}
+
+          {% if results['education'] === 'yes' %}
+          <div class="panel-results panel-border-turquoise">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m">Education</h3>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                {% include "./includes/done-checkbox.html" %}
+              </div>
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Show me how
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur
+              </div>
+            </details>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+{{ govukButton({
       href: "/",
       text: "Start again",
       isStartButton: true
