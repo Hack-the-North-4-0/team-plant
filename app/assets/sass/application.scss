@@ -18,3 +18,58 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.panel-results {
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.panel-border-coral {
+  border-radius: 25px;
+  background: #fadcdc;
+  border: 2px solid coral;
+}
+
+.panel-border-blue {
+  border-radius: 25px;
+  background: #cbd6f6;
+  border: 2px solid #4169e1;
+}
+
+.panel-border-green {
+  border-radius: 25px;
+  background: #d6e0c3;
+  border: 2px solid #6b8e23;
+}
+
+.panel-border-gold {
+  border-radius: 25px;
+  background: #fff4b9;
+  border: 2px solid #ffd700;
+}
+
+.panel-border-magenta {
+  border-radius: 25px;
+  background: #dfb9df;
+  border: 2px solid #8b008b;
+}
+
+.panel-border-brown {
+  border-radius: 25px;
+  background: #fce6d3;
+  border: 2px solid #f4a460;
+}
+
+.panel-border-brick {
+  border-radius: 25px;
+  background: #eac2c2 ;
+  border: 2px solid #b22222;
+}
+
+.panel-border-turquoise {
+  border-radius: 25px;
+  background: #d0f6f6 ;
+  border: 2px solid #00ced1;
+}
+
+
+

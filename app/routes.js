@@ -11,24 +11,36 @@ const questions = require('./data/question-data.js')
 
 router.get('/', function(req, res) {
   res.clearCookie("careAnswers");
-  res.redirect('/questions/photo-id');
+  res.redirect('/index');
 });
 
 router.get('/questions/:pageName', function(req, res) {
-    res.render('question-page', questions[req.params.pageName]);
+  let pageName = req.params.pageName;
+  if (pageName === 'END') {
+    res.redirect(`/results`);
+  } else {
+    res.render('question-page', questions[pageName]);
+  }
 });
 
 router.post('/questions/:pageName', function(req, res) {
-    let pageName = req.params.pageName;
+    let nextPage = req.params.pageName;
     let answers = req.cookies['careAnswers'];  // get cookies
     if (!answers) {
-      answers = [];
+      answers = {};
     }
-    answers.push({name: pageName, value: req.body[pageName]});
+    answers[nextPage] = req.body[nextPage];
     console.dir(answers);
     console.log('===================');
     res.cookie('careAnswers', answers);  //set cookie
-    res.redirect(`/questions/${questions[pageName].next}`);
+    res.redirect(`/questions/${questions[nextPage].next}`);
+
+
+});
+
+router.get('/results', function(req, res) {
+  let answers = req.cookies['careAnswers'];  // get cookies
+  res.render('results-page', {results: answers});
 });
 
 module.exports = router;

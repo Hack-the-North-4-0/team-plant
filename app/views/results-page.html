@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{%- block content %}
+
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+              <h1 class="govuk-heading-l">
+                  Care Leavers Advice
+                </h1>
+            <div class="govuk-panel govuk-panel--confirmation">
+              <h1 class="govuk-panel__title">
+                Results
+              </h1>
+            </div>
+
+            <div class="panel-content ">
+            {% if results['photo-id'] === 'no' %}
+              <div class="panel-results panel-border-coral">
+                <h3 class="govuk-heading-m">Getting a photo identification</h2>
+
+              </div>
+            {% endif %}
+
+            {% if results['bank-account'] === 'no' %}
+            <div class="panel-results panel-border-blue">
+              <h3 class="govuk-heading-m">Getting a bank account</h2>
+
+            </div>
+            {% endif %}
+
+            {% if results['nino'] === 'no' %}
+            <div class="panel-results panel-border-green">
+              <h3 class="govuk-heading-m">Getting a National Insurance Number</h2>
+
+            </div>
+
+            {% endif %}
+
+            {% if results['benefits'] === 'yes' %}
+            <div class="panel-results panel-border-gold">
+            <h3 class="govuk-heading-m">Getting access to benefits</h2>
+
+            </div>
+
+            {% endif %}
+
+            {% if results['housing'] === 'yes' %}
+            <div class="panel-results panel-border-magenta">
+              <h3 class="govuk-heading-m">Finding somewhere to live</h2>
+
+            </div>
+            {% endif %}
+
+            {% if results['support'] === 'no' %}
+            <div class="panel-results panel-border-brown">
+              <h3 class="govuk-heading-m">Finding help and support</h2>
+
+            </div>
+            {% endif %}
+
+            {% if results['employment'] === 'no' %}
+            <div class="panel-results panel-border-brick">
+              <h3 class="govuk-heading-m">Looking for a job</h2>
+
+              </div>
+            {% endif %}
+
+            {% if results['education'] === 'yes' %}
+            <div class="panel-results panel-border-turquoise">
+              <h3 class="govuk-heading-m">Education</h2>
+
+            </div>
+            {% endif %}
+
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    {{ govukButton({
+      href: "/",
+      text: "Start again",
+      isStartButton: true
+    }) }}
+
+
+{% endblock -%}
