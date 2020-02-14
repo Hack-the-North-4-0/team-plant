@@ -21,7 +21,7 @@ module.exports = {
   next : 'benefits'
 },
 'benefits': {
-  text : 'Are you going to apply for state or local benefits?',
+  text : 'Do you want to know more about claiming benefits?',
   name : 'benefits',
   next : 'housing'
 },
@@ -41,7 +41,7 @@ module.exports = {
   next : 'education'
 },
 'education': {
-  text : 'Are you currently in education?',
+  text : 'Are you currently in education or training?',
   name : 'education',
   next : 'END'
 }
